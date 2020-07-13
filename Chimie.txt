@@ -1,0 +1,23 @@
+INDEX:
+	loading
+	background+animatii
+	logo+animatie
+	titlu
+	meniuri
+	introducere, despre chimie
+	de ce <site-ul nostru>
+	(optional) bot ajutor
+	buton -> materie
+	
+MATERIE:meniu sus
+	organica
+		-
+		-
+		-
+	neorganica
+		-
+		-
+		-
+SUBIECTE
+TEST
+TABEL PERIODIC
