@@ -1,0 +1,752 @@
+@keyframes containerFade{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0%{ 
+      opacity:0.3;
+    }
+    30%{
+      opacity:0.8;
+    }
+    50%{
+      opacity:1.1;
+    }
+    75%{
+      opacity:0.9;
+    }
+    100%{
+      opacity:1.0;
+    }
+  }
+  
+  @keyframes atom {
+    from { transform: none; }
+    to { transform: translateY(-10px); }
+  }
+  @keyframes electron-circle1 {
+    from { transform: rotateY(70deg) rotateZ(20deg); }
+    to { transform: rotateY(70deg) rotateZ(380deg); }
+  }
+  @keyframes electron1 {
+    from { transform: rotateZ(-20deg) rotateY(-70deg); }
+    to { transform: rotateZ(-380deg) rotateY(-70deg); }
+  }
+  @keyframes electron-circle2 {
+    from { transform: rotateY(60deg) rotateX(60deg) rotateZ(-30deg); }
+    to { transform: rotateY(60deg) rotateX(60deg) rotateZ(330deg); }
+  }
+  @keyframes electron2 {
+    from { transform: rotateZ(30deg) rotateX(-60deg) rotateY(-60deg); }
+    to { transform: rotateZ(-330deg) rotateX(-60deg) rotateY(-60deg); }
+  }
+  @keyframes electron-circle3 {
+    from { transform: rotateY(-60deg) rotateX(60deg) rotateZ(100deg); }
+    to { transform: rotateY(-60deg) rotateX(60deg) rotateZ(460deg); }
+  }
+  @keyframes electron3 {
+    from { transform: rotateZ(-100deg) rotateX(-60deg) rotateY(60deg); }
+    to { transform: rotateZ(-460deg) rotateX(-60deg) rotateY(60deg); }
+  }
+   
+  @keyframes bounceIn{
+    0%{
+        opacity: 0;
+        transform: scale(0.3) translate3d(0,0,0);
+    }
+    50%{
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80%{
+        opacity: 1;
+        transform: scale(0.89);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1) translate3d(0,0,0);
+    }
+  }
+  @keyframes bounceOut{
+    0%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);   
+    }
+    50%{
+    opacity: 1;
+    transform: scale(0.89);
+    }
+    80%{
+    opacity: 0.9;
+    transform: scale(1.1);
+    }
+    100%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+    display: none;
+    }
+  }
+   
+  @keyframes up-and-down {
+    0% {
+      transform: translateY(0px);
+    }
+    35% {
+      transform: translateY(0px);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translateY(-5px);
+      opacity: 0.8;
+    }
+    70% {
+      transform: translateY(2px);
+      opacity: 0.6;
+    }
+    85% {
+      transform: translateY(0px);
+    }
+  }
+
+  @font-face{
+    src: url('fonts/Montserrat-Regular.otf');
+    font-family: 'Montserrat';
+    font-weight: 400;
+  }
+
+
+/*
+
+========================================================
+            LOADING ATOM
+========================================================
+
+*/
+
+.atom_intrare{
+    position: absolute;
+    margin:auto;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    opacity: 0;
+    animation-name: bounceIn;
+    animation-duration: 450ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+  }
+
+.atom_iesire{
+    position: absolute;
+    margin:auto;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    opacity: 1;
+    animation-name: bounceOut;
+    animation-duration: 450ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2.8s;
+    z-index: 4;
+}
+.atom {
+    position: absolute;
+    margin:auto;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    width: 240px;
+    height: 240px;
+    animation: atom 0.7s ease-in-out infinite alternate;
+    perspective: 450px; 
+    transform-style: preserve-3d;
+}
+.atom:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    background: #cccccc;
+    box-shadow:
+    inset 0 0 25px #ccccff,      /* inner white */
+    inset 10px 0 40px #3385ff,   /* inner left magenta short */
+    inset -10px 0 40px #3385ff,  /* inner right cyan short */
+    inset 10px 0 150px #0066ff,  /* inner left magenta broad */
+    inset -10px 0 150px #0066ff, /* inner right cyan broad */
+    0 0 25px #6699ff,            /* outer white */
+    -5px 0 40px  #0055ff,        /* outer left magenta */
+    5px 0 100px  #001a4d
+}
+.atom .electron {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 4px solid #f2f2f2;
+    transform-style: preserve-3d;
+    box-shadow: 10px 10px #16a2e2;
+}
+.atom .electron:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background: #1aa7f8c5;
+    transform-origin: 50% 50% 0;
+    box-shadow:
+    inset 0 0 25px #ccccff,      /* inner white */
+    inset 10px 0 40px #3385ff,   /* inner left magenta short */
+    inset -10px 0 40px #3385ff,  /* inner right cyan short */
+    inset 10px 0 150px #0066ff,  /* inner left magenta broad */
+    inset -10px 0 150px #0066ff, /* inner right cyan broad */
+    0 0 25px #6699ff,            /* outer white */
+    -5px 0 40px  #0055ff,        /* outer left magenta */
+    5px 0 100px  #001a4d
+}
+.atom .electron:nth-child(1) {
+transform: rotateY(70deg) rotateZ(20deg);
+animation: electron-circle1 1s linear infinite;
+}
+.atom .electron:nth-child(2) {
+transform: rotateY(60deg) rotateX(60deg) rotateZ(-30deg);
+animation: electron-circle2 1s linear infinite;
+}
+.atom .electron:nth-child(3) {
+transform: rotateY(-60deg) rotateX(60deg) rotateZ(100deg);
+animation: electron-circle3 2s linear infinite;
+}
+.atom .electron:nth-child(1):before {
+transform: rotateZ(-20deg) rotateY(-70deg);
+animation: electron1 1s linear infinite;
+}
+.atom .electron:nth-child(2):before {
+transform: rotateZ(30deg) rotateX(-60deg) rotateY(-60deg);
+animation: electron2 1s linear infinite;
+}
+.atom .electron:nth-child(3):before {
+transform: rotateZ(-100deg) rotateX(-60deg) rotateY(60deg);
+animation: electron3 2s linear infinite;
+}
+
+.preloader-dots {
+    text-align: center;
+    position: absolute;
+    top:110%;
+    left:33%;
+    height: 40px;
+    width: 80px;
+    margin: 0 auto;
+}
+  
+.preloader-dots .dot {
+    display: inline-block;
+    background: #16a2e2;
+    height: 10px;
+    width: 10px;
+    opacity: 0.3;
+    border-radius: 50%;
+    animation: up-and-down 1.5s infinite;
+    margin: 1px;
+}
+.preloader-dots .dot:nth-child(2) {
+    animation-delay: .15s;
+}
+.preloader-dots .dot:nth-child(3) {
+    animation-delay: .30s;
+}
+.preloader-dots .dot:nth-child(4) {
+    animation-delay: .45s;
+}
+
+@font-face{
+    font-family:opensansregular;
+    src:url(fonts/opensans-regular.ttf)
+  }
+
+@font-face{
+    font-family: argh;
+    src:url(fonts/Aaargh.ttf);
+}
+
+@font-face{
+    font-family: core;
+    src: url(fonts/core.ttf);
+}
+
+@font-face{
+    font-family: goboldRegular;
+    src: url("fonts/Gobold Regular.otf");
+}
+
+@font-face{
+    font-family: goboldLight;
+    src: url("fonts/Gobold Light.otf");
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+ 
+.preLoadedBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000f1d;
+}
+
+.background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000c1a;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    opacity: 0;
+    animation-name: containerFade;
+    animation-delay: 3.5s;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s; 
+}
+ 
+/*
+
+========================================================
+          NAVIGATION BAR
+========================================================
+
+*/
+
+.navBar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: linear-gradient(to bottom, rgba(8,24,42,1) 0%,rgba(11,37,59,1) 50%,rgba(9,34,55,1) 51%,rgba(14,52,82,1) 100%);
+  box-shadow: 0px 3px 11px 1px rgba(0,0,0,0.75);
+  z-index: 3;
+  transition: 0.6s;
+}
+
+.logo{
+  position: relative;
+  top: 2px;
+  /* left: 250px; */
+  left: 90px;
+  width: 200px;
+  height: 80px;
+}
+
+.navBar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+  display: flex;
+  padding-right:0px;
+  transition: 0.2s;
+}
+
+.navBar li{
+  padding-right: 20px;
+  padding-top: 0px;
+  border-bottom: transparent 3px solid;
+  border-radius:3px;
+  transition: 0.2s;
+  height: 100%;
+}
+
+.navBar li:last-child{
+height: 0;
+}
+
+.navBar li:last-child:hover{
+height: 100%;
+background:rgba(16,63,104,1);
+}
+
+.navBar li .a1{
+  color: rgb(231, 231, 231);
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-family: opensansregular;
+  font-size: 100%;
+  display:inline-block;
+  height: 37px;
+  position: relative;
+  top: 7px;
+  left: 10px;
+  transition: 0.2s;
+}
+
+.navBar .a1 i{
+  text-align: center;
+}
+
+.navBar .a1:hover{
+  color: #00a2ff;
+}
+
+.navBar li:hover{
+color: #00a2ff;
+border-bottom: #00a2ff 4px solid;
+background: linear-gradient(to bottom, rgba(15,45,79,1) 0%,rgba(20,71,112,1) 50%,rgba(16,63,104,1) 51%,rgba(27,99,155,1) 100%);
+}
+
+.others{
+position: relative;
+display: inline-block;
+}
+
+.othersDropDown{
+position: relative;
+transform: translateY(-40px);
+opacity: 0;
+transition: 0.2s;
+}
+
+.othersBg{
+position: relative;
+width: calc(100% + 20px);
+height: 100%;
+background-color: rgb(11, 21, 37);
+margin-top: 3px;
+}
+
+.othersBg div{
+position: relative;
+background-color: rgb(1, 29, 48);
+height: 50px;
+cursor: pointer;
+}
+
+.othersBg div:hover{
+background-color: rgb(0, 104, 202);
+}
+
+.othersDropDown a{
+position: relative;
+color: white;
+text-decoration: none;
+display: flex;
+left: 15px;
+top: 15px;
+margin-right: 20px;
+font-family: 'Montserrat';
+}
+
+.others:hover .othersDropDown{
+transform: translateY(0px);
+transition: 0.2s;
+opacity: 1;
+}
+
+.others:hover .a1Hover{
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+}
+
+.tabelClassSmall{
+  display: none;
+}
+
+.subiecteClassSmall{
+  display: none;
+}
+
+.indexClassSmall{
+  display:none;
+}
+
+.blankClass{
+  width: 1px;
+  display: none;
+}
+
+
+
+.sectioner{
+  position: relative;
+  top: 80px;
+  width: 100%;
+  height: calc(100% - 80px);
+  background-color: rgb(192, 192, 192);
+  display: flex;
+  transition: 1s;
+}
+
+.section1{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(1, 106, 167);
+  text-align: center;
+  background-image: url('img/organicav2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 3px 0px 0px 0px rgb(253, 253, 253);
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.bg1{
+  width:100%;
+  height:100%;
+  position: relative;
+}
+
+.section2{
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(177, 177, 177);
+  text-align: center;
+  background-image: url('img/anorganica.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.bg2{
+width:100%;
+height:100%;
+position: relative;
+}
+
+.pOrganica{
+  font-size: 70px;
+  font-family: goboldRegular;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: calc(50% - 7vh);
+  color: white;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.73);
+  transition: 1s;
+}
+
+.pAnorganica{
+  font-size: 70px;
+  font-family: goboldRegular;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: calc(50% - 7vh);
+  color: white;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.73);
+  transition: 1s;
+}
+
+.arrows{
+position: relative;
+top: -60vh;
+left: 23px;
+float: right;
+height: 40px;
+width: 40px;
+border-radius: 50%;
+color: rgb(0, 124, 207);
+border: 1px solid white;
+transition: 1s;
+}
+
+.clicked1_arr{
+cursor: pointer;
+left:-25px;
+
+}
+.clicked2_arr{
+cursor: pointer;
+left:65px;
+}
+
+.sec1Hover:hover{
+width:90%;
+transition: 0.5s;
+}
+
+.sec2Hover:hover{
+width: 90%;
+transition: 0.5s;
+}
+
+.arrows img{
+position: relative;
+height: 100%;
+width: 100%;
+}
+
+.clicked1{
+width: 100%;
+transition: 1s;
+}
+
+.clicked2{
+width: 100%;
+transition: 1s;
+}
+
+.sec1Gone{
+width: 0%;
+transition: 1s;
+}
+
+.sec2Gone{
+width: 0%;
+transition: 1s;
+}
+
+.orgClicked{
+font-size: 90px;
+top: 7vh;
+}
+
+.anorgClicked{
+font-size: 90px;
+top: 7vh;
+}
+
+
+.orgClicked{
+  font-size: 90px;
+  top: 7vh;
+}
+
+.anorgClicked{
+  font-size: 90px;
+  top: 7vh;
+}
+
+.list{
+  position: relative;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background-color: blue;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.list ul li{
+  text-align: left;
+}
+
+@media screen and (max-width: 1280px) {
+  .tabelClass{
+    display: none;
+}
+.tabelClassSmall{
+    display: block;
+}
+}
+
+@media screen and (max-width: 1070px) {
+  .subiecteClass{
+    display: none;
+  }
+  .subiecteClassSmall{
+    display: block;
+}
+}
+
+@media screen and (max-width: 820px){
+  .logo{
+    left: 48px;
+  }
+  .materieClass{
+      display: none;
+  }
+  .materieClassSmall{
+      display: block;
+  }
+  .pOrganica{
+    font-size:48px;
+  }
+  .pAnorganica{
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  #nav li:nth-child(2) span{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .logo{
+      left: 10px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .indexClass{
+    display: none;
+  }
+  .indexClassSmall{
+      display: block;
+  }
+  .logo{
+    top: 10px;
+    width: 160px;
+    height: 64px;
+  }
+  .blankClass{
+    display: block;
+    opacity: 0;
+  }
+  .pOrganica{
+    font-size:34px;
+  }
+  .pAnorganica{
+    font-size: 34px;
+  }
+}

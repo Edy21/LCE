@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LCE - Materie BAC</title>
+    <link href="materie.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="icon" href="img/atom2.png"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="materie.js"></script>
+</head>
+<body>
+    <!-- <div class="preLoadedBackground"></div> -->
+    <div class="background"></div>
+    <div class="atom_iesire">
+        <div class="atom_intrare">
+            <div class="atom">
+                <div class="electron"></div>
+                <div class="electron"></div>
+                <div class="electron"></div>
+
+                <div class='preloader-dots'>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                    <div class='dot'></div>
+                </div>
+            </div>        
+        </div>      
+    </div> 
+    <div class="container">
+        <div class="navBar">
+                <img class="logo" src="img/lcev5.png"></img>
+                <ul id="nav">
+                    <li class="blankClass"><a class="a1"></a></li>
+                    <li class="indexClass"><a class="a1" href="index.html"><i class="fas fa-home"></i> <span>Acasa</span></a></li>                    <li class="subiecteClass"><a class="a1" href="subiecte.html"><i class="fas fa-stream"></i> Subiecte BAC</a></li>
+                    <li class="tabelClass"><a class="a1" href="tabel.html"><i class="fas fa-table"></i> Tabel Periodic</a></li>
+                    <li class="others">
+                        <a class="a1 a1Hover" href="#"><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i></a>
+                        <div class="othersDropDown">
+                            <div class="othersBg">
+                                <div onclick="window.location='index.html'" class="indexClassSmall"><a>Acasa</a></div>
+                                <div onclick="window.location='subiecte.html'" class="subiecteClassSmall"><a>Subiecte BAC</a></div>
+                                <div onclick="window.location='tabel.html'" class="tabelClassSmall"><a>Tabel Periodic</a></div>
+                                <div onclick="window.location='informatii.html'"><a>Informatii &amp; de stiut BAC</a></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div> 
+        <div class="sectioner">
+            <div class="section1 sec1Hover">
+              <div class="bg1" onclick="window.location='materieorganica.html'">
+                <p class="pOrganica">Chimie Organica</p>
+                </div>
+                <div class="arrows" onclick="click3()">
+                    <!--<i class="fas fa-arrows-alt-h"></i> -->
+                    <img src="img/littleAtom.png">
+                </div>
+            </div>
+            <div class="section2 sec2Hover">
+                <div class="bg2" onclick="window.location='materieanorganica.html'">
+                <p class="pAnorganica">Chimie Anorganica</p>
+            </div>
+             </div>
+        </div>
+    </div>
+</body>
+</html>
